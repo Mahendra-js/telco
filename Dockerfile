@@ -1,6 +1,5 @@
-FROM ubuntu
-RUN apt update -y
-RUN apt install apache2 -y
-RUN apt install apache2-utils -y
-EXPOSE 80
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+FROM python:3.9
+WORKDIR /app
+COPY app.py .
+CMD ["python", "app.py"]
+
